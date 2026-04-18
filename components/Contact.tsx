@@ -10,7 +10,6 @@ export default function Contact() {
           farescherif49@yahoo.com
         </a>
         <p className="text-gray-500">+33 6 62 35 77 07</p>
-        <p className="text-gray-500">3 rue Paul Guillon, Poitiers</p>
       </div>
     </section>
   );

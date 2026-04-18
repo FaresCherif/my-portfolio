@@ -13,14 +13,14 @@ export default function Footer() {
             Email
           </a>
           <a
-            href="https://github.com/TonPseudo"
+            href="https://github.com/FaresCherif"
             target="_blank"
             className="hover:text-white transition"
           >
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/TonPseudo"
+            href="https://www.linkedin.com/in/fares-lucas-cherif-93bab4170/"
             target="_blank"
             className="hover:text-white transition"
           >
