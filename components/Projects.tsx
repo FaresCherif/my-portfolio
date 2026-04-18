@@ -1,13 +1,32 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
     <section id="projects" className="pt-24 py-12 px-4 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-12">Projets & Expériences</h2>
+      <motion.h2
+        className="text-3xl font-bold text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Projets & Expériences
+      </motion.h2>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <div key={project.title} className="border border-gray-700 rounded-xl overflow-hidden hover:border-blue-500 transition">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            className="border border-gray-700 rounded-xl overflow-hidden hover:border-blue-500 transition"
+            initial={{ opacity: 0}}
+            whileInView={{ opacity: 1}}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+          >
             {project.image && (
               <div className="relative w-full h-48">
                 <Image
@@ -30,7 +49,7 @@ export default function Projects() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
