@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/Particles";
 import ScrollProgress from "@/components/ScrollProgress";
+import Cursor from "@/components/Cursor";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -38,7 +39,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={`${geist.className} bg-gray-950 text-white h-screen flex flex-col overflow-hidden`}>
+      <body className={`${geist.className} bg-gray-950 text-white h-screen flex flex-col overflow-hidden cursor-none`}>
+        <Cursor />
         <ParticlesBackground />
         <ScrollProgress />
         <Header />
@@ -54,3 +56,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
