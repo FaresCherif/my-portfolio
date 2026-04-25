@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ParticlesBackground from "@/components/Particles";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -33,14 +34,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <body className={`${geist.className} bg-gray-950 text-white h-screen flex flex-col overflow-hidden`}>
+        <ParticlesBackground />
         <Header />
         <div className="flex-1 overflow-auto">{children}</div>
         <Footer />
