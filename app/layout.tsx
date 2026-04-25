@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/Particles";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -39,8 +40,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <body className={`${geist.className} bg-gray-950 text-white h-screen flex flex-col overflow-hidden`}>
         <ParticlesBackground />
+        <ScrollProgress />
         <Header />
-        <div className="flex-1 overflow-auto">{children}</div>
+        <div
+          id="scroll-container"
+          className="flex-1 overflow-auto scrollbar-none"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
