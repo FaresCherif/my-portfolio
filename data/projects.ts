@@ -31,6 +31,14 @@ export const projects = [
     type: "Projet universitaire",
   },
   {
+    title: "Vue-Assurance",
+    description:
+      "Mockup d'un site d'assurance développé en Vue.js. Interface moderne et responsive pour présenter les services d'assurance.",
+    stack: ["Vue", "JS"],
+    type: "Projet personnel",
+    link: "https://vue-assurance.vercel.app/",
+  },
+  {
     title: "Mobile Clicker Game",
     description:
       "Jeu mobile de type clicker avec des vagues d'ennemis se déplaçant de droite à gauche. Le joueur doit cliquer dessus pour les éliminer.",
