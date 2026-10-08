@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="pt-24 py-12 px-4 max-w-xl mx-auto text-center">
       <h2 className="text-3xl font-bold mb-4">Me contacter</h2>
       <p className="text-gray-400 mb-12">
-        Disponible pour de nouvelles opportunités. N’hésitez pas à me contacter !
+        Vous recrutez un développeur full-stack PHP / JavaScript en CDI ? Je vous réponds sous 24 h.
       </p>
 
       <div className="flex flex-col gap-4">
@@ -48,7 +48,7 @@ export default function Contact() {
           <MapPin className="text-blue-500 shrink-0" size={20} />
           <div className="text-left">
             <p className="text-xs text-gray-500 mb-1">Localisation</p>
-            <p className="text-gray-300">Poitiers, France</p>
+            <p className="text-gray-300">Basé à Poitiers — mobile en France et à l’international</p>
           </div>
         </div>
 

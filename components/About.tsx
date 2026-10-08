@@ -22,15 +22,19 @@ export default function About() {
         <motion.div {...fadeUp}>
           <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-4">Qui suis-je ?</h3>
           <p className="text-gray-300 leading-relaxed">
-            Je m’appelle Fares Cherif, développeur full-stack titulaire d’un Master en Conception Logicielle
-            de l’Université de Poitiers. J’aime concevoir des applications robustes et bien pensées,
-            aussi bien côté back end que front end.
+            Je m’appelle Fares Cherif, développeur full-stack PHP / JavaScript, diplômé d’un Master en
+            Conception Logicielle de l’Université de Poitiers.
           </p>
           <p className="text-gray-300 leading-relaxed mt-4">
-            Depuis 2022, je travaille chez Einden, éditeur d’une solution de Digital Asset Management :
-            d’abord en alternance, puis en CDI. J’y développe des modules et des plugins (CKEditor5, Akeneo)
-            en PHP et JavaScript. Je cherche aujourd’hui à relever de nouveaux défis et à contribuer à des
-            projets ambitieux.
+            Depuis 2022, je travaille chez Einden, éditeur d’une plateforme de gestion de médias pour les entreprises :
+            d’abord en alternance, puis en CDI. J’y développe des modules (synchronisation via API,
+            organisation des médias, optimisation SQL), des plugins (CKEditor5, Akeneo, Drupal, Android)
+            et des sites web clients, tout en assurant le support technique.
+          </p>
+          <p className="text-gray-300 leading-relaxed mt-4">
+            Ce que j’aime : comprendre un besoin client et le transformer en fonctionnalité fiable, du back end
+            à l’interface. Je recherche aujourd’hui un CDI de développeur full-stack au sein d’une équipe
+            produit, en France ou à l’international.
           </p>
         </motion.div>
 
@@ -39,8 +43,8 @@ export default function About() {
           <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Compétences</h3>
           <div className="flex flex-col gap-6">
             {[
-              { label: "Langages", items: ["PHP", "JavaScript", "SQL", "Java", "C++", "C#", "Python"] },
-              { label: "Frameworks & outils", items: ["Vue.js", "CKEditor5", "Akeneo", "Qt", "SFML", "Unity", "Android"] },
+              { label: "Langages", items: ["PHP", "JavaScript", "TypeScript", "SQL", "HTML / CSS", "SASS"] },
+              { label: "Écosystème", items: ["Drupal", "WordPress", "Akeneo", "CKEditor5", "Postman", "Linux"] },
             ].map((group) => (
               <div key={group.label}>
                 <p className="text-gray-400 text-sm mb-3">{group.label}</p>
@@ -60,6 +64,10 @@ export default function About() {
                 </div>
               </div>
             ))}
+            <p className="text-gray-500 text-sm">
+              <span className="text-gray-400">Notions :</span> Java, C / C++, C#, Python, Symfony, React,
+              Vue.js, Node.js, Qt, Unity, ROS2 — Méthodes Agile et cycle en V.
+            </p>
           </div>
         </motion.div>
 
@@ -69,7 +77,7 @@ export default function About() {
           <div className="flex flex-col gap-4">
             {[
               { year: "2021 - 2023", title: "Master en Conception Logicielle", school: "Université de Poitiers" },
-              { year: "2018 - 2021", title: "Licence en Informatique", school: "Université de Limoges" },
+              { year: "2018 - 2021", title: "DUT puis Licence en Informatique", school: "Université de Limoges" },
               { year: "2018", title: "Bac scientifique — spécialité ISN", school: "Lycée Marguerite de Valois" },
             ].map((item, index) => (
               <motion.div
@@ -96,8 +104,8 @@ export default function About() {
           <div className="flex flex-col gap-3">
             {[
               { lang: "Français", level: "Langue maternelle" },
-              { lang: "Anglais", level: "Niveau B2" },
-              { lang: "Allemand", level: "Niveau scolaire" },
+              { lang: "Anglais", level: "C2 — TOEIC 990/990" },
+              { lang: "Allemand", level: "A1 — Débutant" },
             ].map((item) => (
               <div key={item.lang} className="flex justify-between border-b border-gray-800 pb-3">
                 <span className="text-gray-300">{item.lang}</span>

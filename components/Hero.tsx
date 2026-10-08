@@ -38,8 +38,9 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        Titulaire d’un Master en Conception Logicielle, je conçois depuis 2022
-        des modules et plugins pour une solution de Digital Asset Management chez Einden.
+        4 ans d’expérience sur une plateforme de gestion de médias pour les entreprises :
+        modules métier, intégrations API et plugins (Drupal, Akeneo, CKEditor5) déployés
+        chez des clients en production. À la recherche d’un CDI, en France ou à l’international.
       </motion.p>
 
       <motion.div
@@ -49,7 +50,7 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <a href="/projects" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
-          Voir mes projets
+          Voir mon parcours
         </a>
         <a href="/contact" className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
           Me contacter

@@ -11,10 +11,10 @@ const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Fares Cherif — Développeur full-stack",
-  description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. Expériences, projets et contact.",
+  description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
   openGraph: {
     title: "Fares Cherif — Développeur full-stack",
-    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. Expériences, projets et contact.",
+    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
     url: "https://www.softechsolutions.fr",
     siteName: "Fares Cherif",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fares Cherif — Développeur full-stack",
-    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. Expériences, projets et contact.",
+    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
     images: ["https://www.softechsolutions.fr/og-image.png"],
   },
 };

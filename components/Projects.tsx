@@ -43,13 +43,18 @@ export default function Projects() {
               </div>
               <p className="text-xs text-blue-400 font-medium mt-1 mb-3">{exp.type}</p>
               <p className="text-gray-300 text-sm mb-3">{exp.summary}</p>
-              {exp.tasks.length > 0 && (
-                <ul className="list-disc list-inside text-gray-400 text-sm space-y-1 mb-4">
-                  {exp.tasks.map((task) => (
-                    <li key={task}>{task}</li>
-                  ))}
-                </ul>
-              )}
+              {exp.sections.map((section, i) => (
+                <div key={section.title ?? i} className="mb-4">
+                  {section.title && (
+                    <p className="text-sm text-white font-medium mb-1">{section.title}</p>
+                  )}
+                  <ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
+                    {section.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
               <div className="flex flex-wrap gap-2">
                 {exp.stack.map((tech) => (
                   <span key={tech} className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded">
