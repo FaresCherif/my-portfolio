@@ -21,9 +21,9 @@ export default function Projects() {
   return (
     <section id="projects" className="pt-24 py-12 px-4 max-w-5xl mx-auto">
       {/* Expériences professionnelles */}
-      <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">
+      <motion.h1 {...fadeUp} className="text-3xl font-bold text-center mb-12">
         Expériences professionnelles
-      </motion.h2>
+      </motion.h1>
 
       <div className="flex flex-col gap-6 mb-20">
         {experiences.map((exp, index) => (
@@ -37,7 +37,7 @@ export default function Projects() {
           >
             {exp.image && (
               <div className="relative w-full h-48 md:h-auto md:w-72 shrink-0">
-                <Image src={exp.image} alt={exp.company} fill className="object-cover" />
+                <Image src={exp.image} alt={exp.imageAlt ?? exp.company} fill className="object-cover" />
               </div>
             )}
             <div className="p-6 flex-1">
@@ -92,7 +92,7 @@ export default function Projects() {
           >
             {project.image ? (
               <div className="relative w-full h-48">
-                <Image src={project.image} alt={project.title} fill className="object-cover" />
+                <Image src={project.image} alt={project.imageAlt ?? project.title} fill className="object-cover" />
               </div>
             ) : (
               project.icon && (

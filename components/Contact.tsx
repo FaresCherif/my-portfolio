@@ -3,7 +3,7 @@ import { Mail, Phone, ExternalLink, MapPin } from "lucide-react";
 export default function Contact() {
   return (
     <section id="contact" className="pt-24 py-12 px-4 max-w-xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-4">Me contacter</h2>
+      <h1 className="text-3xl font-bold mb-4">Me contacter</h1>
       <p className="text-gray-400 mb-12">
         Vous recrutez un développeur full-stack PHP / JavaScript en CDI ? Je vous réponds sous 24 h.
       </p>

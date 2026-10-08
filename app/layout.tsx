@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME, SITE_URL, pageMetadata } from "@/lib/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/Particles";
@@ -9,34 +10,14 @@ import ScrollProgress from "@/components/ScrollProgress";
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.softechsolutions.fr"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Fares Cherif — Développeur full-stack",
-    template: "%s | Fares Cherif — Développeur full-stack",
+    default: DEFAULT_TITLE,
+    template: `%s | ${SITE_NAME} — Développeur full-stack PHP / JavaScript`,
   },
-  description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
-  openGraph: {
-    title: "Fares Cherif — Développeur full-stack",
-    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
-    url: "/",
-    siteName: "Fares Cherif",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Fares Cherif — Développeur full-stack",
-      },
-    ],
-    locale: "fr_FR",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Fares Cherif — Développeur full-stack",
-    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
-    images: ["/og-image.png"],
-  },
+  ...pageMetadata({ description: DEFAULT_DESCRIPTION, path: "/" }),
+  // Pas d'URL canonique globale : chaque page déclare la sienne
+  alternates: undefined,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

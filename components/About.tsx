@@ -12,15 +12,15 @@ const fadeUp = {
 export default function About() {
   return (
     <section className="pt-24 py-12 px-4 max-w-3xl mx-auto">
-      <motion.h2 {...fadeUp} className="text-3xl font-bold mb-12 text-center">
+      <motion.h1 {...fadeUp} className="text-3xl font-bold mb-12 text-center">
         À propos
-      </motion.h2>
+      </motion.h1>
 
       <div className="flex flex-col gap-12">
 
         {/* Présentation */}
         <motion.div {...fadeUp}>
-          <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-4">Qui suis-je ?</h3>
+          <h2 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-4">Qui suis-je ?</h2>
           <p className="text-gray-300 leading-relaxed">
             Je m’appelle Fares Cherif, développeur full-stack PHP / JavaScript, diplômé d’un Master en
             Conception Logicielle de l’Université de Poitiers.
@@ -40,7 +40,7 @@ export default function About() {
 
         {/* Compétences */}
         <motion.div {...fadeUp}>
-          <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Compétences</h3>
+          <h2 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Compétences</h2>
           <div className="flex flex-col gap-6">
             {[
               { label: "Langages", items: ["PHP", "JavaScript", "TypeScript", "SQL", "HTML / CSS", "SASS"] },
@@ -73,7 +73,7 @@ export default function About() {
 
         {/* Formation */}
         <motion.div {...fadeUp}>
-          <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Formation</h3>
+          <h2 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Formation</h2>
           <div className="flex flex-col gap-4">
             {[
               { year: "2021 - 2023", title: "Master en Conception Logicielle", school: "Université de Poitiers" },
@@ -100,7 +100,7 @@ export default function About() {
 
         {/* Langues */}
         <motion.div {...fadeUp}>
-          <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Langues</h3>
+          <h2 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Langues</h2>
           <div className="flex flex-col gap-3">
             {[
               { lang: "Français", level: "Langue maternelle" },
@@ -117,7 +117,7 @@ export default function About() {
 
         {/* Centres d’intérêt */}
         <motion.div {...fadeUp}>
-          <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Centres d’intérêt</h3>
+          <h2 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Centres d’intérêt</h2>
           <div className="flex flex-wrap gap-3">
             {["Tennis", "Course à pied", "Échecs", "Littérature", "Voyages"].map((item, index) => (
               <motion.span

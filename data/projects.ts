@@ -10,6 +10,7 @@ type Experience = {
   sections: { title?: string; items: string[] }[];
   stack: string[];
   image?: string;
+  imageAlt?: string;
 };
 
 type Project = {
@@ -18,6 +19,7 @@ type Project = {
   stack: string[];
   type: string;
   image?: string;
+  imageAlt?: string;
   // Visuel générique affiché quand le projet n'a pas de capture
   icon?: LucideIcon;
   link?: string;
@@ -61,6 +63,7 @@ export const experiences: Experience[] = [
     ],
     stack: ["PHP", "JavaScript", "TypeScript", "SQL", "SASS", "Drupal", "CKEditor5", "Akeneo", "Postman", "Linux"],
     image: "/images/einden.webp",
+    imageAlt: "Interface de la plateforme de gestion de médias Einden : grille de recherche d’images",
   },
   {
     company: "Ganylab",
@@ -112,6 +115,7 @@ export const projects: Project[] = [
     stack: ["C++", "Qt"],
     type: "Master — Poitiers",
     image: "/images/drawbot.png",
+    imageAlt: "Application Drawbot : tracés de couleur dessinés sur la tablette",
   },
   {
     title: "Vue-Assurance",
@@ -160,6 +164,7 @@ export const projects: Project[] = [
     stack: ["Java"],
     type: "Licence — Limoges",
     image: "/images/raytracing.png",
+    imageAlt: "Rendu ray-tracing : pièce colorée avec une sphère miroir et une sphère en verre",
   },
   {
     title: "Mobile Clicker Game",
