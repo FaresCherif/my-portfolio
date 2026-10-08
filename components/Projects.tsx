@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { experiences, projects } from "@/data/projects";
@@ -11,7 +12,12 @@ const fadeUp = {
   transition: { duration: 0.5 },
 };
 
+// Nombre de projets visibles sur mobile avant le bouton « Voir plus »
+const MOBILE_VISIBLE = 4;
+
 export default function Projects() {
+  const [showAll, setShowAll] = useState(false);
+
   return (
     <section id="projects" className="pt-24 py-12 px-4 max-w-5xl mx-auto">
       {/* Expériences professionnelles */}
@@ -76,16 +82,28 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
-            className="border border-gray-700 rounded-xl overflow-hidden hover:border-blue-500 transition"
+            className={`border border-gray-700 rounded-xl overflow-hidden hover:border-blue-500 transition ${
+              !showAll && index >= MOBILE_VISIBLE ? "hidden md:block" : ""
+            }`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
+            transition={{ duration: 0.4, delay: (index % 3) * 0.1 }}
           >
-            {project.image && (
+            {project.image ? (
               <div className="relative w-full h-48">
                 <Image src={project.image} alt={project.title} fill className="object-cover" />
               </div>
+            ) : (
+              project.icon && (
+                <div className="relative w-full h-48 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-950/70 via-gray-900 to-gray-950">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 opacity-[0.15] [background-image:linear-gradient(#3b82f6_1px,transparent_1px),linear-gradient(90deg,#3b82f6_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(circle,black,transparent_70%)]"
+                  />
+                  <project.icon aria-hidden="true" size={56} strokeWidth={1.25} className="relative text-blue-400" />
+                </div>
+              )
             )}
             <div className="p-6">
               <span className="text-xs text-blue-500 font-medium">{project.type}</span>
@@ -112,6 +130,18 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {projects.length > MOBILE_VISIBLE && (
+        <div className="mt-8 text-center md:hidden">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            aria-expanded={showAll}
+            className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition"
+          >
+            {showAll ? "Voir moins" : `Voir plus (${projects.length - MOBILE_VISIBLE})`}
+          </button>
+        </div>
+      )}
     </section>
   );
 }

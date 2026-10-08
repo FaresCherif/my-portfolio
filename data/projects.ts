@@ -1,3 +1,6 @@
+import type { LucideIcon } from "lucide-react";
+import { Bot, Box, Brain, Car, Dices, MessageSquareLock, ShieldCheck, Smartphone, Swords } from "lucide-react";
+
 type Experience = {
   company: string;
   role: string;
@@ -15,6 +18,8 @@ type Project = {
   stack: string[];
   type: string;
   image?: string;
+  // Visuel générique affiché quand le projet n'a pas de capture
+  icon?: LucideIcon;
   link?: string;
 };
 
@@ -94,6 +99,7 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     title: "Organisation d’images par IA",
+    icon: Brain,
     description:
       "Conception, entraînement et validation d’un modèle d’intelligence artificielle pour classer automatiquement des images.",
     stack: ["Machine learning"],
@@ -109,14 +115,15 @@ export const projects: Project[] = [
   },
   {
     title: "Vue-Assurance",
+    icon: ShieldCheck,
     description:
       "Maquette d’un site d’assurance en Vue.js : interface moderne et responsive présentant les services d’un assureur.",
     stack: ["Vue.js", "JavaScript"],
     type: "Projet personnel",
-    link: "https://vue-assurance.vercel.app/",
   },
   {
     title: "Moteur de rendu 3D",
+    icon: Box,
     description:
       "Rendu d’objets 3D : découpage des modèles en triangles, puis développement et application de shaders.",
     stack: ["3D", "Shaders"],
@@ -124,6 +131,7 @@ export const projects: Project[] = [
   },
   {
     title: "Robot mobile",
+    icon: Bot,
     description:
       "Conception et développement d’un robot dont chaque roue est pilotée de façon asynchrone.",
     stack: ["Robotique"],
@@ -131,6 +139,7 @@ export const projects: Project[] = [
   },
   {
     title: "Unity — Circuit de voiture",
+    icon: Car,
     description:
       "Jeu de course dans lequel on pilote une voiture sur un circuit personnalisable, avec gestion des collisions.",
     stack: ["C#", "Unity"],
@@ -138,6 +147,7 @@ export const projects: Project[] = [
   },
   {
     title: "Messagerie sécurisée",
+    icon: MessageSquareLock,
     description:
       "Mise en place d’un réseau local pour l’envoi de messages chiffrés par clé publique / privée, puis interception par une attaque Man-in-the-Middle.",
     stack: ["Réseau", "Cryptographie"],
@@ -153,6 +163,7 @@ export const projects: Project[] = [
   },
   {
     title: "Mobile Clicker Game",
+    icon: Smartphone,
     description:
       "Jeu mobile de type clicker avec vagues d’ennemis, système de niveaux et récupération de données via une API.",
     stack: ["Java", "Android"],
@@ -160,6 +171,7 @@ export const projects: Project[] = [
   },
   {
     title: "Jeu type Pokémon",
+    icon: Swords,
     description:
       "Jeu en ligne de commande développé en équipe : conception des classes, documentation et débogage.",
     stack: ["POO"],
@@ -167,6 +179,7 @@ export const projects: Project[] = [
   },
   {
     title: "Yahtzee",
+    icon: Dices,
     description:
       "Jeu de Yahtzee multijoueur avec deux modes : ligne de commande et interface graphique.",
     stack: ["C++", "SFML"],
