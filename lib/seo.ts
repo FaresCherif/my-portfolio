@@ -13,8 +13,6 @@ export const PAGES = {
 
 export type Page = keyof typeof PAGES;
 
-const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630 };
-
 // Versions FR / EN d'une même page, pour les balises hreflang et le sitemap.
 // x-default pointe vers le français, la version principale du site.
 export function languageAlternates(path: string) {
@@ -34,6 +32,8 @@ export function pageMetadata(lang: Lang, page: Page): Metadata {
   const title = page === "home" ? undefined : meta[page].title;
   const description = page === "home" ? meta.description : meta[page].description;
   const shareTitle = title ? `${title} | ${SITE_NAME}` : meta.title;
+  // Image générée par app/og/[lang]/route.ts
+  const image = { url: `/og/${lang}`, width: 1200, height: 630, alt: meta.title, type: "image/png" };
 
   return {
     ...(title && { title }),
@@ -44,7 +44,7 @@ export function pageMetadata(lang: Lang, page: Page): Metadata {
       description,
       url,
       siteName: SITE_NAME,
-      images: [{ ...OG_IMAGE, alt: meta.title }],
+      images: [image],
       locale: meta.ogLocale,
       alternateLocale: getContent(lang === "fr" ? "en" : "fr").meta.ogLocale,
       type: "website",
@@ -53,7 +53,7 @@ export function pageMetadata(lang: Lang, page: Page): Metadata {
       card: "summary_large_image",
       title: shareTitle,
       description,
-      images: [OG_IMAGE.url],
+      images: [image],
     },
   };
 }

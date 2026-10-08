@@ -1,4 +1,4 @@
-import { Bot, Box, Brain, Car, Dices, MessageSquareLock, ShieldCheck, Smartphone, Swords } from "lucide-react";
+import { Bot, Box, Brain, Globe, Car, Dices, MessageSquareLock, ShieldCheck, Smartphone, Swords } from "lucide-react";
 import type { Content } from "./types";
 
 export const en: Content = {
@@ -9,6 +9,7 @@ export const en: Content = {
       "Portfolio of Fares Cherif, full-stack PHP / JavaScript developer based in France. 4 years of experience, looking for a permanent role in France or abroad.",
     ogLocale: "en_US",
     jobTitle: "Full-Stack PHP / JavaScript Developer",
+    ogTagline: "4 years of experience · Open to permanent roles in France and abroad",
     about: {
       title: "About",
       description:
@@ -91,7 +92,7 @@ export const en: Content = {
     projectsTitle: "Projects",
     showMore: "Show more",
     showLess: "Show less",
-    viewProject: "View project →",
+    viewProject: "View the code →",
   },
   contact: {
     title: "Get in touch",
@@ -176,6 +177,15 @@ export const en: Content = {
     },
   ],
   projects: [
+    {
+      title: "This portfolio",
+      icon: Globe,
+      description:
+        "Bilingual FR / EN website built with Next.js 16, React 19 and TypeScript: static rendering, SEO (structured data, hreflang, sitemap), accessibility and continuous deployment on Vercel.",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      type: "Personal project — 2026",
+      link: "https://github.com/FaresCherif/my-portfolio",
+    },
     {
       title: "AI image classification",
       icon: Brain,

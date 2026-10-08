@@ -14,7 +14,6 @@ export default function PersonJsonLd({ lang }: { lang: Lang }) {
         "@id": `${SITE_URL}/#person`,
         name: "Fares Cherif",
         url: SITE_URL,
-        image: `${SITE_URL}/og-image.png`,
         jobTitle: meta.jobTitle,
         description: meta.description,
         worksFor: { "@type": "Organization", name: "Einden" },

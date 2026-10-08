@@ -1,4 +1,5 @@
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/Particles";
@@ -17,6 +18,8 @@ export default function SiteLayout({ lang, children }: { lang: Lang; children: R
         <Header lang={lang} />
         <div className="flex-1 flex flex-col">{children}</div>
         <Footer lang={lang} />
+        {/* Statistiques de visite Vercel, sans cookies */}
+        <Analytics />
       </body>
     </html>
   );

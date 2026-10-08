@@ -1,4 +1,4 @@
-import { Bot, Box, Brain, Car, Dices, MessageSquareLock, ShieldCheck, Smartphone, Swords } from "lucide-react";
+import { Bot, Box, Brain, Globe, Car, Dices, MessageSquareLock, ShieldCheck, Smartphone, Swords } from "lucide-react";
 import type { Content } from "./types";
 
 export const fr: Content = {
@@ -9,6 +9,7 @@ export const fr: Content = {
       "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
     ogLocale: "fr_FR",
     jobTitle: "Développeur full-stack PHP / JavaScript",
+    ogTagline: "4 ans d’expérience · À la recherche d’un CDI en France et à l’international",
     about: {
       title: "À propos",
       description:
@@ -83,7 +84,7 @@ export const fr: Content = {
     projectsTitle: "Projets",
     showMore: "Voir plus",
     showLess: "Voir moins",
-    viewProject: "Voir le projet →",
+    viewProject: "Voir le code →",
   },
   contact: {
     title: "Me contacter",
@@ -168,6 +169,15 @@ export const fr: Content = {
     },
   ],
   projects: [
+    {
+      title: "Ce portfolio",
+      icon: Globe,
+      description:
+        "Site bilingue FR / EN développé avec Next.js 16, React 19 et TypeScript : rendu statique, SEO (données structurées, hreflang, sitemap), accessibilité et déploiement continu sur Vercel.",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      type: "Projet personnel — 2026",
+      link: "https://github.com/FaresCherif/my-portfolio",
+    },
     {
       title: "Organisation d’images par IA",
       icon: Brain,

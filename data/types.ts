@@ -36,6 +36,8 @@ export type Content = {
     description: string;
     ogLocale: string;
     jobTitle: string;
+    // Ligne du bas de l'image de partage (Open Graph)
+    ogTagline: string;
     about: PageMeta;
     projects: PageMeta;
     contact: PageMeta;
