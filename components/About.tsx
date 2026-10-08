@@ -104,7 +104,7 @@ export default function About() {
           <div className="flex flex-col gap-3">
             {[
               { lang: "Français", level: "Langue maternelle" },
-              { lang: "Anglais", level: "C2 — TOEIC 990/990" },
+              { lang: "Anglais", level: "C1 — TOEIC 990/990 (score maximal)" },
               { lang: "Allemand", level: "A1 — Débutant" },
             ].map((item) => (
               <div key={item.lang} className="flex justify-between border-b border-gray-800 pb-3">
