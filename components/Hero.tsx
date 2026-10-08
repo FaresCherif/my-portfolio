@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { getContent, localePath, type Lang } from "@/data";
 
-export default function Hero() {
+export default function Hero({ lang }: { lang: Lang }) {
+  const t = getContent(lang).hero;
+
   return (
     <section className="pt-24 pb-12 flex-1 flex flex-col items-center justify-center text-center px-4">
       <motion.p
@@ -12,7 +15,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Bonjour, je m’appelle
+        {t.greeting}
       </motion.p>
 
       <motion.h1
@@ -30,7 +33,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Développeur full-stack PHP / JavaScript
+        {t.role}
       </motion.h2>
 
       <motion.p
@@ -39,9 +42,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        4 ans d’expérience sur une plateforme de gestion de médias pour les entreprises :
-        modules métier, intégrations API et plugins (Drupal, Akeneo, CKEditor5) déployés
-        chez des clients en production. À la recherche d’un CDI, en France ou à l’international.
+        {t.pitch}
       </motion.p>
 
       <motion.div
@@ -50,26 +51,26 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Link href="/projects" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
-          Voir mon parcours
+        <Link href={localePath(lang, "/projects")} className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
+          {t.ctaJourney}
         </Link>
-        <Link href="/contact" className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
-          Me contacter
+        <Link href={localePath(lang, "/contact")} className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
+          {t.ctaContact}
         </Link>
-        <a href="/CV_FR.pdf" download className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
-          Télécharger mon CV
+        <a href={t.cvHref} download className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
+          {t.ctaCv}
         </a>
       </motion.div>
 
       <motion.a
-        href="/CV_EN.pdf"
+        href={t.otherCvHref}
         download
         className="mt-4 text-sm text-gray-400 hover:text-blue-400 transition"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        English resume (PDF)
+        {t.otherCvLabel}
       </motion.a>
     </section>
   );

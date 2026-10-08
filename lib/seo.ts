@@ -1,41 +1,52 @@
 import type { Metadata } from "next";
+import { getContent, localePath, type Lang } from "@/data";
 
 export const SITE_URL = "https://www.softechsolutions.fr";
 export const SITE_NAME = "Fares Cherif";
-export const DEFAULT_TITLE = "Fares Cherif — Développeur full-stack PHP / JavaScript (Poitiers)";
-export const DEFAULT_DESCRIPTION =
-  "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.";
 
-const OG_IMAGE = {
-  url: "/og-image.png",
-  width: 1200,
-  height: 630,
-  alt: "Fares Cherif — Développeur full-stack PHP / JavaScript",
-};
+export const PAGES = {
+  home: "/",
+  about: "/about",
+  projects: "/projects",
+  contact: "/contact",
+} as const;
 
-// Métadonnées d'une page : titre, description, URL canonique et aperçu de partage.
+export type Page = keyof typeof PAGES;
+
+const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630 };
+
+// Versions FR / EN d'une même page, pour les balises hreflang et le sitemap.
+// x-default pointe vers le français, la version principale du site.
+export function languageAlternates(path: string) {
+  return {
+    fr: localePath("fr", path),
+    en: localePath("en", path),
+    "x-default": localePath("fr", path),
+  };
+}
+
+// Métadonnées d'une page : titre, description, URL canonique, hreflang et aperçu de partage.
 // L'openGraph d'une page remplace entièrement celui du layout, d'où la reprise des valeurs communes.
-export function pageMetadata({
-  title,
-  description,
-  path,
-}: {
-  title?: string;
-  description: string;
-  path: string;
-}): Metadata {
-  const shareTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
+export function pageMetadata(lang: Lang, page: Page): Metadata {
+  const { meta } = getContent(lang);
+  const path = PAGES[page];
+  const url = localePath(lang, path);
+  const title = page === "home" ? undefined : meta[page].title;
+  const description = page === "home" ? meta.description : meta[page].description;
+  const shareTitle = title ? `${title} | ${SITE_NAME}` : meta.title;
+
   return {
     ...(title && { title }),
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: url, languages: languageAlternates(path) },
     openGraph: {
       title: shareTitle,
       description,
-      url: path,
+      url,
       siteName: SITE_NAME,
-      images: [OG_IMAGE],
-      locale: "fr_FR",
+      images: [{ ...OG_IMAGE, alt: meta.title }],
+      locale: meta.ogLocale,
+      alternateLocale: getContent(lang === "fr" ? "en" : "fr").meta.ogLocale,
       type: "website",
     },
     twitter: {
@@ -44,5 +55,17 @@ export function pageMetadata({
       description,
       images: [OG_IMAGE.url],
     },
+  };
+}
+
+// Métadonnées du layout racine d'une langue
+export function rootMetadata(lang: Lang): Metadata {
+  const { meta } = getContent(lang);
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: { default: meta.title, template: meta.titleTemplate },
+    ...pageMetadata(lang, "home"),
+    // Pas d'URL canonique globale : chaque page déclare la sienne
+    alternates: undefined,
   };
 }

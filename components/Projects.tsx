@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { experiences, projects } from "@/data/projects";
+import { getContent, type Lang } from "@/data";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -15,14 +15,15 @@ const fadeUp = {
 // Nombre de projets visibles sur mobile avant le bouton « Voir plus »
 const MOBILE_VISIBLE = 4;
 
-export default function Projects() {
+export default function Projects({ lang }: { lang: Lang }) {
+  const { journey: t, experiences, projects } = getContent(lang);
   const [showAll, setShowAll] = useState(false);
 
   return (
     <section id="projects" className="pt-24 py-12 px-4 max-w-5xl mx-auto">
       {/* Expériences professionnelles */}
       <motion.h1 {...fadeUp} className="text-3xl font-bold text-center mb-12">
-        Expériences professionnelles
+        {t.experiencesTitle}
       </motion.h1>
 
       <div className="flex flex-col gap-6 mb-20">
@@ -75,7 +76,7 @@ export default function Projects() {
 
       {/* Projets */}
       <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">
-        Projets
+        {t.projectsTitle}
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -123,7 +124,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-block mt-4 text-sm text-blue-400 hover:text-blue-300 transition"
                 >
-                  Voir le projet →
+                  {t.viewProject}
                 </a>
               )}
             </div>
@@ -138,7 +139,7 @@ export default function Projects() {
             aria-expanded={showAll}
             className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition"
           >
-            {showAll ? "Voir moins" : `Voir plus (${projects.length - MOBILE_VISIBLE})`}
+            {showAll ? t.showLess : `${t.showMore} (${projects.length - MOBILE_VISIBLE})`}
           </button>
         </div>
       )}

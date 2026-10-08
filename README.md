@@ -19,7 +19,11 @@ npm run build
 
 ## Structure
 
-- `app/` — pages (accueil, à propos, parcours, contact), métadonnées SEO, `sitemap.ts`, `robots.ts`
-- `components/` — sections et éléments d'interface
-- `data/projects.ts` — expériences professionnelles et projets (à modifier pour mettre à jour le contenu)
+Site bilingue : le français est servi à la racine (`/`, `/about`…), l'anglais sous `/en`.
+
+- `app/(fr)/` et `app/(en)/en/` — pages de chaque langue, chacune avec son layout racine (`<html lang>`)
+- `app/global-not-found.tsx` — page 404 commune (bilingue), `sitemap.ts`, `robots.ts`
+- `components/` — sections et éléments d'interface, qui reçoivent la langue en prop
+- `data/fr.ts` et `data/en.ts` — **tout le texte du site** (expériences, projets, libellés). Modifier les deux fichiers ensemble ; le type `Content` signale tout oubli à la compilation
+- `lib/seo.ts` — URL du site, métadonnées et balises hreflang
 - `public/` — CV (FR / EN), images et image Open Graph

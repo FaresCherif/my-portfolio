@@ -1,9 +1,11 @@
-export default function Footer() {
+import { getContent, type Lang } from "@/data";
+
+export default function Footer({ lang }: { lang: Lang }) {
   return (
     <footer className="border-t border-white/10 py-8 px-6">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
         <p>
-          Fares <span className="text-blue-500">Cherif</span> — Développeur
+          Fares <span className="text-blue-500">Cherif</span> — {getContent(lang).footer.role}
         </p>
         <div className="flex gap-6">
           <a
