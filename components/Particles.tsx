@@ -6,11 +6,15 @@ import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => setInit(true));
+    }).then(() => {
+      setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+      setInit(true);
+    });
   }, []);
 
   if (!init) return null;
@@ -32,7 +36,7 @@ export default function ParticlesBackground() {
             width: 1,
           },
           move: {
-            enable: true,
+            enable: !reducedMotion,
             speed: 0.8,
             direction: "none",
             random: true,

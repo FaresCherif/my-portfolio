@@ -34,7 +34,7 @@ export default function Projects() {
                 <Image src={exp.image} alt={exp.company} fill className="object-cover" />
               </div>
             )}
-            <div className="p-6">
+            <div className="p-6 flex-1">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-xl font-semibold">
                   {exp.role} <span className="text-blue-500">— {exp.company}</span>
@@ -48,7 +48,7 @@ export default function Projects() {
                   {section.title && (
                     <p className="text-sm text-white font-medium mb-1">{section.title}</p>
                   )}
-                  <ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
+                  <ul className="list-disc pl-5 text-gray-400 text-sm space-y-1">
                     {section.items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}

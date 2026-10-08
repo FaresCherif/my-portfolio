@@ -64,7 +64,7 @@ export default function About() {
                 </div>
               </div>
             ))}
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               <span className="text-gray-400">Notions :</span> Java, C / C++, C#, Python, Symfony, React,
               Vue.js, Node.js, Qt, Unity, ROS2 — Méthodes Agile et cycle en V.
             </p>
@@ -91,7 +91,7 @@ export default function About() {
                 <span className="text-blue-500 font-mono text-sm w-32 shrink-0">{item.year}</span>
                 <div>
                   <p className="text-white font-medium">{item.title}</p>
-                  <p className="text-gray-500 text-sm">{item.school}</p>
+                  <p className="text-gray-400 text-sm">{item.school}</p>
                 </div>
               </motion.div>
             ))}
@@ -109,7 +109,7 @@ export default function About() {
             ].map((item) => (
               <div key={item.lang} className="flex justify-between border-b border-gray-800 pb-3">
                 <span className="text-gray-300">{item.lang}</span>
-                <span className="text-gray-500 text-sm">{item.level}</span>
+                <span className="text-gray-400 text-sm">{item.level}</span>
               </div>
             ))}
           </div>

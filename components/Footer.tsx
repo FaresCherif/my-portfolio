@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 py-8 px-6">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
         <p>
           Fares <span className="text-blue-500">Cherif</span> — Développeur
         </p>
@@ -15,6 +15,7 @@ export default function Footer() {
           <a
             href="https://github.com/FaresCherif"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-white transition"
           >
             GitHub
@@ -22,6 +23,7 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/fares-lucas-cherif-93bab4170/"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-white transition"
           >
             LinkedIn

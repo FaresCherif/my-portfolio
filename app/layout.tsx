@@ -9,16 +9,20 @@ import ScrollProgress from "@/components/ScrollProgress";
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fares Cherif — Développeur full-stack",
+  metadataBase: new URL("https://www.softechsolutions.fr"),
+  title: {
+    default: "Fares Cherif — Développeur full-stack",
+    template: "%s | Fares Cherif — Développeur full-stack",
+  },
   description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
   openGraph: {
     title: "Fares Cherif — Développeur full-stack",
     description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
-    url: "https://www.softechsolutions.fr",
+    url: "/",
     siteName: "Fares Cherif",
     images: [
       {
-        url: "https://www.softechsolutions.fr/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Fares Cherif — Développeur full-stack",
@@ -31,24 +35,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fares Cherif — Développeur full-stack",
     description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript. 4 ans d’expérience, à la recherche d’un CDI en France et à l’international.",
-    images: ["https://www.softechsolutions.fr/og-image.png"],
+    images: ["/og-image.png"],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={`${geist.className} bg-gray-950 text-white h-screen flex flex-col overflow-hidden`}>
+      <body className={`${geist.className} bg-gray-950 text-white min-h-dvh flex flex-col`}>
         <ParticlesBackground />
         <ScrollProgress />
         <Header />
-        <div
-          id="scroll-container"
-          className="flex-1 overflow-auto scrollbar-none"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {children}
-        </div>
+        <div className="flex-1 flex flex-col">{children}</div>
         <Footer />
       </body>
     </html>

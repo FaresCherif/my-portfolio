@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="pt-24 h-full flex flex-col items-center justify-center text-center px-4">
+    <section className="pt-24 pb-12 flex-1 flex flex-col items-center justify-center text-center px-4">
       <motion.p
         className="text-blue-500 font-medium mb-2"
         initial={{ opacity: 0, y: 20 }}
@@ -33,7 +34,7 @@ export default function Hero() {
       </motion.h2>
 
       <motion.p
-        className="max-w-xl text-gray-500 mb-8"
+        className="max-w-xl text-gray-400 mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
@@ -49,12 +50,12 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <a href="/projects" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
+        <Link href="/projects" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
           Voir mon parcours
-        </a>
-        <a href="/contact" className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
+        </Link>
+        <Link href="/contact" className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
           Me contacter
-        </a>
+        </Link>
         <a href="/CV_FR.pdf" download className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
           Télécharger mon CV
         </a>
@@ -63,7 +64,7 @@ export default function Hero() {
       <motion.a
         href="/CV_EN.pdf"
         download
-        className="mt-4 text-sm text-gray-500 hover:text-blue-400 transition"
+        className="mt-4 text-sm text-gray-400 hover:text-blue-400 transition"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}

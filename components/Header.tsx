@@ -34,6 +34,7 @@ export default function Header() {
                   ? "text-blue-400"
                   : "text-gray-400 hover:text-white"
               }`}
+              aria-current={pathname === link.href ? "page" : undefined}
             >
               {link.label}
             </Link>
@@ -44,6 +45,8 @@ export default function Header() {
         <button
           className="lg:hidden text-gray-400 hover:text-white transition"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
