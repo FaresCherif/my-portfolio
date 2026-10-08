@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="pt-24 py-12 px-4 max-w-xl mx-auto text-center">
       <h2 className="text-3xl font-bold mb-4">Me contacter</h2>
       <p className="text-gray-400 mb-12">
-        Disponible pour de nouvelles opportunités. N'hésitez pas à me contacter !
+        Disponible pour de nouvelles opportunités. N’hésitez pas à me contacter !
       </p>
 
       <div className="flex flex-col gap-4">

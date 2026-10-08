@@ -22,31 +22,43 @@ export default function About() {
         <motion.div {...fadeUp}>
           <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-4">Qui suis-je ?</h3>
           <p className="text-gray-300 leading-relaxed">
-            Je m'appelle Fares Cherif, développeur passionné titulaire d'un Master en Conception Logicielle
-            de l'Université de Poitiers. J'aime concevoir des applications robustes et bien pensées,
+            Je m’appelle Fares Cherif, développeur full-stack titulaire d’un Master en Conception Logicielle
+            de l’Université de Poitiers. J’aime concevoir des applications robustes et bien pensées,
             aussi bien côté back end que front end.
           </p>
           <p className="text-gray-300 leading-relaxed mt-4">
-            Après plusieurs expériences en stage et une alternance suivie d'un CDI chez Einden,
-            je cherche à relever de nouveaux défis et à contribuer à des projets ambitieux.
+            Depuis 2022, je travaille chez Einden, éditeur d’une solution de Digital Asset Management :
+            d’abord en alternance, puis en CDI. J’y développe des modules et des plugins (CKEditor5, Akeneo)
+            en PHP et JavaScript. Je cherche aujourd’hui à relever de nouveaux défis et à contribuer à des
+            projets ambitieux.
           </p>
         </motion.div>
 
         {/* Compétences */}
         <motion.div {...fadeUp}>
           <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Compétences</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {["PHP", "JavaScript", "Java", "C++", "Python", "SQL"].map((tech, index) => (
-              <motion.div
-                key={tech}
-                className="border border-gray-700 rounded-lg px-4 py-3 text-center text-gray-300 hover:border-blue-500 transition"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                {tech}
-              </motion.div>
+          <div className="flex flex-col gap-6">
+            {[
+              { label: "Langages", items: ["PHP", "JavaScript", "SQL", "Java", "C++", "C#", "Python"] },
+              { label: "Frameworks & outils", items: ["Vue.js", "CKEditor5", "Akeneo", "Qt", "SFML", "Unity", "Android"] },
+            ].map((group) => (
+              <div key={group.label}>
+                <p className="text-gray-400 text-sm mb-3">{group.label}</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {group.items.map((tech, index) => (
+                    <motion.div
+                      key={tech}
+                      className="border border-gray-700 rounded-lg px-4 py-3 text-center text-gray-300 hover:border-blue-500 transition"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                      {tech}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -56,7 +68,6 @@ export default function About() {
           <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Formation</h3>
           <div className="flex flex-col gap-4">
             {[
-              { year: "2022 - Aujourd'hui", title: "Développeur", school: "Einden" },
               { year: "2021 - 2023", title: "Master en Conception Logicielle", school: "Université de Poitiers" },
               { year: "2018 - 2021", title: "Licence en Informatique", school: "Université de Limoges" },
               { year: "2018", title: "Bac scientifique — spécialité ISN", school: "Lycée Marguerite de Valois" },
@@ -96,9 +107,9 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Centres d'intérêt */}
+        {/* Centres d’intérêt */}
         <motion.div {...fadeUp}>
-          <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Centres d'intérêt</h3>
+          <h3 className="text-blue-500 font-semibold uppercase text-sm tracking-widest mb-6">Centres d’intérêt</h3>
           <div className="flex flex-wrap gap-3">
             {["Tennis", "Course à pied", "Échecs", "Littérature", "Voyages"].map((item, index) => (
               <motion.span

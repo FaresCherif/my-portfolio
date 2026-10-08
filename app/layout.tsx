@@ -10,11 +10,11 @@ import Cursor from "@/components/Cursor";
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fares Cherif — Développeur",
-  description: "Portfolio de Fares Cherif, développeur web et logiciel.",
+  title: "Fares Cherif — Développeur full-stack",
+  description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. Expériences, projets et contact.",
   openGraph: {
-    title: "Fares Cherif — Développeur",
-    description: "Portfolio de Fares Cherif, développeur web et logiciel.",
+    title: "Fares Cherif — Développeur full-stack",
+    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. Expériences, projets et contact.",
     url: "https://www.softechsolutions.fr",
     siteName: "Fares Cherif",
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "https://www.softechsolutions.fr/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Fares Cherif — Développeur",
+        alt: "Fares Cherif — Développeur full-stack",
       },
     ],
     locale: "fr_FR",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fares Cherif — Développeur",
-    description: "Portfolio de Fares Cherif, développeur web et logiciel.",
+    title: "Fares Cherif — Développeur full-stack",
+    description: "Portfolio de Fares Cherif, développeur full-stack PHP / JavaScript basé à Poitiers. Expériences, projets et contact.",
     images: ["https://www.softechsolutions.fr/og-image.png"],
   },
 };

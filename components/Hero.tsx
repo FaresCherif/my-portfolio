@@ -11,7 +11,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Bonjour, je m'appelle
+        Bonjour, je m’appelle
       </motion.p>
 
       <motion.h1
@@ -29,7 +29,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Développeur
+        Développeur full-stack PHP / JavaScript
       </motion.h2>
 
       <motion.p
@@ -38,8 +38,8 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        Titulaire d'un Master en Conception Logicielle, je développe des
-        applications web et logicielles. Déterminé, sérieux et autonome.
+        Titulaire d’un Master en Conception Logicielle, je conçois depuis 2022
+        des modules et plugins pour une solution de Digital Asset Management chez Einden.
       </motion.p>
 
       <motion.div
@@ -54,10 +54,21 @@ export default function Hero() {
         <a href="/contact" className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
           Me contacter
         </a>
-        <a href="/CV_CHERIF_FARES_FR.pdf" download className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
+        <a href="/CV_FR.pdf" download className="border border-gray-600 hover:border-blue-500 text-gray-300 px-6 py-3 rounded-lg font-medium transition">
           Télécharger mon CV
         </a>
       </motion.div>
+
+      <motion.a
+        href="/CV_EN.pdf"
+        download
+        className="mt-4 text-sm text-gray-500 hover:text-blue-400 transition"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
+        English resume (PDF)
+      </motion.a>
     </section>
   );
 }

@@ -2,19 +2,69 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { projects } from "@/data/projects";
+import { experiences, projects } from "@/data/projects";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5 },
+};
 
 export default function Projects() {
   return (
     <section id="projects" className="pt-24 py-12 px-4 max-w-5xl mx-auto">
-      <motion.h2
-        className="text-3xl font-bold text-center mb-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        Projets & Expériences
+      {/* Expériences professionnelles */}
+      <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">
+        Expériences professionnelles
+      </motion.h2>
+
+      <div className="flex flex-col gap-6 mb-20">
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={exp.company}
+            className="border border-gray-700 rounded-xl overflow-hidden hover:border-blue-500 transition md:flex"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+          >
+            {exp.image && (
+              <div className="relative w-full h-48 md:h-auto md:w-72 shrink-0">
+                <Image src={exp.image} alt={exp.company} fill className="object-cover" />
+              </div>
+            )}
+            <div className="p-6">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="text-xl font-semibold">
+                  {exp.role} <span className="text-blue-500">— {exp.company}</span>
+                </h3>
+                <span className="text-sm text-gray-400 font-mono">{exp.period}</span>
+              </div>
+              <p className="text-xs text-blue-400 font-medium mt-1 mb-3">{exp.type}</p>
+              <p className="text-gray-300 text-sm mb-3">{exp.summary}</p>
+              {exp.tasks.length > 0 && (
+                <ul className="list-disc list-inside text-gray-400 text-sm space-y-1 mb-4">
+                  {exp.tasks.map((task) => (
+                    <li key={task}>{task}</li>
+                  ))}
+                </ul>
+              )}
+              <div className="flex flex-wrap gap-2">
+                {exp.stack.map((tech) => (
+                  <span key={tech} className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Projets */}
+      <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">
+        Projets
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -22,19 +72,14 @@ export default function Projects() {
           <motion.div
             key={project.title}
             className="border border-gray-700 rounded-xl overflow-hidden hover:border-blue-500 transition"
-            initial={{ opacity: 0}}
-            whileInView={{ opacity: 1}}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
             {project.image && (
               <div className="relative w-full h-48">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={project.image} alt={project.title} fill className="object-cover" />
               </div>
             )}
             <div className="p-6">
