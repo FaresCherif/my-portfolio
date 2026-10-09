@@ -1,4 +1,4 @@
-import { Bot, Box, Brain, Globe, Car, Dices, MessageSquareLock, ShieldCheck, Smartphone, Swords } from "lucide-react";
+import { Bot, Box, Brain, Globe, Car, MessageSquareLock, ShieldCheck, Swords } from "lucide-react";
 import type { Content } from "./types";
 
 export const fr: Content = {
@@ -245,11 +245,12 @@ export const fr: Content = {
     },
     {
       title: "Mobile Clicker Game",
-      icon: Smartphone,
       description:
         "Jeu mobile de type clicker avec vagues d’ennemis, système de niveaux et récupération de données via une API.",
       stack: ["Java", "Android"],
       type: "Licence — Limoges",
+      image: "/images/clicker.webp",
+      imageAlt: "Mobile Clicker Game : carte des niveaux reliés entre eux",
     },
     {
       title: "Jeu type Pokémon",
@@ -260,10 +261,11 @@ export const fr: Content = {
     },
     {
       title: "Yahtzee",
-      icon: Dices,
       description: "Jeu de Yahtzee multijoueur avec deux modes : ligne de commande et interface graphique.",
       stack: ["C++", "SFML"],
       type: "Projet universitaire",
+      image: "/images/yahtzee.webp",
+      imageAlt: "Yahtzee en interface graphique SFML : cinq dés sur un tapis vert et la feuille de score",
     },
   ],
 };

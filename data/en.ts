@@ -1,4 +1,4 @@
-import { Bot, Box, Brain, Globe, Car, Dices, MessageSquareLock, ShieldCheck, Smartphone, Swords } from "lucide-react";
+import { Bot, Box, Brain, Globe, Car, MessageSquareLock, ShieldCheck, Swords } from "lucide-react";
 import type { Content } from "./types";
 
 export const en: Content = {
@@ -248,10 +248,11 @@ export const en: Content = {
     },
     {
       title: "Mobile Clicker Game",
-      icon: Smartphone,
       description: "Clicker-style mobile game with enemy waves, a level system and data fetched from an API.",
       stack: ["Java", "Android"],
       type: "Bachelor’s — Limoges",
+      image: "/images/clicker.webp",
+      imageAlt: "Mobile Clicker Game: map of connected levels",
     },
     {
       title: "Pokémon-style game",
@@ -262,10 +263,11 @@ export const en: Content = {
     },
     {
       title: "Yahtzee",
-      icon: Dices,
       description: "Multiplayer Yahtzee game with two modes: command line and graphical interface.",
       stack: ["C++", "SFML"],
       type: "University project",
+      image: "/images/yahtzee.webp",
+      imageAlt: "Yahtzee SFML interface: five dice on a green table next to the score sheet",
     },
   ],
 };
